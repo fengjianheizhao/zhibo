@@ -1,5 +1,5 @@
-<?php include $TEMPLATE_PATH. "header.php"; ?>
-<?php include $TEMPLATE_PATH. "left.php"; ?>
+<?php include $TEMPLATE_PATH . "header.php"; ?>
+<?php include $TEMPLATE_PATH . "left.php"; ?>
 <!-- CONTENT-->
 
 <div id="content" class="white">
@@ -8,7 +8,7 @@
 		<div class="content">
 			<form action="?m=<?= $m ?>&c=ajax&a=edit"  method="post" id="formbox" onSubmit="return ajaxSubmit(this)">
 				<input  name="detail[id]" value="<?= $detail['id'] ?>" type="hidden"  />
-				
+
 				<?php
 				$options = array();
 				foreach ($catetree as $key => $val) {
@@ -23,10 +23,10 @@
 					"options" => $options, //可选值
 					"default" => "", //默认值
 				);
-				$value = $detail['cid'] ;
+				$value = $detail['cid'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "title", //字段名
@@ -36,10 +36,10 @@
 					"options" => "", //可选值
 					"default" => "", //默认值
 				);
-				$value = $detail['title'] ;
+				$value = $detail['title'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "islink", //字段名
@@ -52,7 +52,7 @@
 				$value = $detail['islink'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "linkurl", //字段名
@@ -104,18 +104,18 @@
 				$value = $detail['seokeyword'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-	
-				
-			
-			
+
+
+
+
 				<?php
-				foreach($fieldsList as $k=>$v){
-					$FIELD=$v;
-					$value=$detail[$FIELD['name']];
-					include $TEMPLATE_PATH."/input/".$v['formtype'].".php";
+				foreach ($fieldsList as $k => $v) {
+					$FIELD = $v;
+					$value = $detail[$FIELD['name']];
+					include $TEMPLATE_PATH . "/input/" . $v['formtype'] . ".php";
 				}
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "content", //字段名
@@ -128,7 +128,7 @@
 				$value = $detail['content'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "intro", //字段名
@@ -142,7 +142,7 @@
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
 				<div class="h20px"></div>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "author", //字段名
@@ -155,7 +155,7 @@
 				$value = $detail['author'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "copyfrom", //字段名
@@ -168,7 +168,7 @@
 				$value = $detail['copyfrom'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "copyfromurl", //字段名
@@ -181,7 +181,7 @@
 				$value = $detail['copyfromurl'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "hits", //字段名
@@ -194,11 +194,41 @@
 				$value = $detail['hits'];
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
-				
+
+				<?php
+				$templateList = isset($templateConfig['rules'][$MOD['model']][$MOD['template']]['show']) ? $templateConfig['rules'][$MOD['model']][$MOD['template']]['show'] : false;
+				if ($templateList && is_array($templateList)) {
+					$options = array();
+					foreach ($templateList as $k => $v) {
+						$options[] = array(
+							"key" => $v,
+							"value" => $k,
+						);
+					}
+				} else {
+					$options = array(
+						array(
+							"key" => "默认模板",
+							"value" => "0",
+						),
+					);
+				}
+
+				$FIELD = array(
+					"name" => "template", //字段名
+					"title" => "页面模板", //字段描述
+					"prompt" => "不了解系统者请保持默认或留空！", //字段说明
+					"formtype" => "select", //表单类型 
+					"options" => $options, //可选值
+					"default" => "", //默认值
+				);
+				$value = $detail['template'];
+				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
+				?>
+
 				<div class="h20px"></div>
 				<div class="submit">
-					<input type="hidden" value="<?=$jumpurl?>" id="formjump" />
+					<input type="hidden" value="<?= $jumpurl ?>" id="formjump" />
 					<input type="submit" value="立即保存" />
 					<input type="reset" value="重置" class="black" />
 				</div>
@@ -206,4 +236,4 @@
 			</form>
 		</div>
 	</div>
-	<?php include $TEMPLATE_PATH. "footer.php"; ?>
+	<?php include $TEMPLATE_PATH . "footer.php"; ?>

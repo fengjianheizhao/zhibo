@@ -145,7 +145,7 @@
 				?>
 
 				<?php
-				$templateList = isset($templateConfig['rules'][$MOD['model']['template']['show']]) ? $templateConfig['rules'][$MOD['model']['template']['show']] : false;
+				$templateList = isset($templateConfig['rules'][$MOD['model']][$MOD['template']]['show']) ? $templateConfig['rules'][$MOD['model']][$MOD['template']]['show']: false;
 				if ($templateList && is_array($templateList)) {
 					$options = array();
 					foreach ($templateList as $k => $v) {

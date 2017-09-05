@@ -110,7 +110,7 @@ abstract class Model extends Kernel {
 			`status` tinyint(4) DEFAULT NULL,
 			`content` text  COMMENT '内容', 
 			`sort` int(11) DEFAULT NULL,
-			`template` varchar(255) DEFAULT NULL,
+			`template` varchar(30) DEFAULT NULL COMMENT '渲染模板', 
 			`hits` bigint(20) DEFAULT NULL COMMENT '浏览量', 
 			`addtime` int(11) default NULL COMMENT '添加时间', 
 			`edittime` int(11) default NULL COMMENT '更新时间', 

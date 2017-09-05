@@ -33,6 +33,7 @@ return array(
 				),
 				"show" => array(
 					"show" => "默认详情页",
+					"show2" => "默认详情页2",
 				),
 			),
 		),
@@ -40,8 +41,8 @@ return array(
 			"pages" => array(
 				"title" => "默认单页模板",
 				"show" => array(
-					"page-default" => "默认首页",
-					"page-guestbook" => "留言模板",
+					"page-default" => "默认单页模板",
+					"page-guestbook" => "用户留言模板",
 				),
 			),
 		),

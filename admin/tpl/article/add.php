@@ -124,7 +124,7 @@
 				$value = NULL;
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "intro", //字段名
@@ -138,7 +138,7 @@
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
 				<div class="h20px"></div>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "author", //字段名
@@ -151,7 +151,7 @@
 				$value = NULL;
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "copyfrom", //字段名
@@ -164,7 +164,7 @@
 				$value = NULL;
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "copyfromurl", //字段名
@@ -177,7 +177,7 @@
 				$value = NULL;
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
 				?>
-				
+
 				<?php
 				$FIELD = array(
 					"name" => "hits", //字段名
@@ -186,6 +186,37 @@
 					"formtype" => "number", //表单类型 
 					"options" => "", //可选值
 					"default" => 0, //默认值
+				);
+				$value = NULL;
+				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";
+				?>
+
+				<?php
+				$templateList = isset($templateConfig['rules'][$MOD['model']][$MOD['template']]['show']) ? $templateConfig['rules'][$MOD['model']][$MOD['template']]['show'] : false;
+				if ($templateList && is_array($templateList)) {
+					$options = array();
+					foreach ($templateList as $k => $v) {
+						$options[] = array(
+							"key" => $v,
+							"value" => $k,
+						);
+					}
+				} else {
+					$options = array(
+						array(
+							"key" => "默认模板",
+							"value" => "0",
+						),
+					);
+				}
+
+				$FIELD = array(
+					"name" => "template", //字段名
+					"title" => "页面模板", //字段描述
+					"prompt" => "不了解系统者请保持默认或留空！", //字段说明
+					"formtype" => "select", //表单类型 
+					"options" => $options, //可选值
+					"default" => "", //默认值
 				);
 				$value = NULL;
 				include $TEMPLATE_PATH . "/input/" . $FIELD['formtype'] . ".php";

@@ -110,6 +110,7 @@ abstract class Model extends Kernel {
 		`recom` int(10) DEFAULT NULL COMMENT '推荐', 
 		`status` tinyint(4) default NULL COMMENT '状态', 
 		`hits` bigint(20) DEFAULT NULL COMMENT '浏览量', 
+		`template` varchar(30) DEFAULT NULL COMMENT '渲染模板', 
 		`addtime` int(11) default NULL COMMENT '添加时间', 
 		`edittime` int(11) default NULL COMMENT '更新时间', 
 		`ip` varchar(255) DEFAULT NULL COMMENT '发布者ip', 

@@ -142,19 +142,12 @@
 				?>
 
 				<?php
-				
-				print_r($templateConfig);
-				
-				echo $MOD['model'];
-				echo $MOD['template'];
-				
 				$templateList = isset($templateConfig['rules'][$MOD['model']][$MOD['template']]['show']) ? $templateConfig['rules'][$MOD['model']][$MOD['template']]['show']: false;
-				print_r($templateList);
 				if ($templateList && is_array($templateList)) {
 					$options = array();
 					foreach ($templateList as $k => $v) {
 						$options[] = array(
-							"key" => $v['title'],
+							"key" => $v,
 							"value" => $k,
 						);
 					}
