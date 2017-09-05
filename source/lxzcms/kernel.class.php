@@ -443,7 +443,7 @@ abstract class Kernel {
 		$DATA["SKIN"] = $this->getSkin();
 
 
-		$TEMPLATE_FILE = $DATA["TEMPLATE_FILE"];
+		ECHO $TEMPLATE_FILE = $DATA["TEMPLATE_FILE"];
 
 
 		//$this->display->initialize($DATA)->display($DATA, $TEMPLATE_FILE);

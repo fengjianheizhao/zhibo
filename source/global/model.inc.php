@@ -81,7 +81,7 @@ return array(
 	"pages" => array(
 		"index" => "pages",
 		"name" => "单页模型",
-		"reuse" => "0",
+		"reuse" => "1",
 		"author" => "Liu Xianzhong",
 		"admin_default_ac" => "list",
 		"admin_left" => array(),

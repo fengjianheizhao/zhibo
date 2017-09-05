@@ -4,66 +4,26 @@ defined('IN_SYSTEM') or exit('Access Denied');
 
 class index extends Model {
 
-	public $config;
-
 	public function __construct() {
 		parent::__construct();
 	}
 
 	public function view() {
-		/* 载入模板控制类，视图控制类, template依赖display运行，靠display保护内核环境变量 */
-		//$this->loadBuiltinmodel("display,template");
 
-		/*
-		  $_SC = &$this->_SC;
-		  $USER = &$this->_USER;
-		  $db = &$this->DB;
-		  $m = &$this->m;
-		  $ac = &$this->ac;
-		  $get = &$this->_GET;
-		  $post = &$this->_POST;
-		  $MOD = &$this->MOD;
-		  $TEMPLATE = &$this->_TEMPLATE;
-		  $SKIN = &$this->_SKIN;
-		  $SITEURL = $this->_SITEURL;
-		  $SITENAME = $this->_SITENAME;
-		  $MODULE = $this->MODULE;
-		  $_SETTING = $this->_SETTING;
-		  $CAT = $this->category;
-		  $AD = $this->ads;
-		  $URL = $this->url;
-		 */
+		$_GET = &$this->_GET;
+		$_POST = &$this->_POST;
+		$_REQUEST = &$this->_REQUEST;
+		$_COOKIE = &$this->_COOKIE;
+
+
+
+		$_SC = &$this->_SC;
+		$CAT = $this->category;
+		$AD = $this->ads;
+		$MOD = &$this->MOD;
+
 		$Controller = $this->getController();
 		$Controller ? @include_once $Controller : $this->goIndex();
-
-
-
-
-		/*
-		  $_SC = &$this->_SC;
-		  $USER = &$this->_USER;
-		  $db = &$this->DB;
-		  $m = &$this->m;
-		  $ac = &$this->ac;
-		  $get = &$this->_GET;
-		  $post = &$this->_POST;
-		  $MOD = &$this->MOD;
-		  $TEMPLATE = &$this->_TEMPLATE;
-		  $SKIN = &$this->_SKIN;
-		  $SITEURL = $this->_SITEURL;
-		  $SITENAME = $this->_SITENAME;
-		  $MODULE = $this->MODULE;
-		  $_SETTING = $this->_SETTING;
-		  $CAT = $this->category;
-		  $AD = $this->ads;
-		  $URL = $this->url;
-		  $TIMESUFFIX = date("Ymdhi");
-		  $actionfile = $this->getControllers();
-		  //echo  $actionfile;
-
-		  $actionfile ? @include_once $actionfile : $this->goIndex();
-		 * 
-		 */
 	}
 
 	public function cache() {
@@ -111,13 +71,23 @@ class index extends Model {
 		} else {
 			$RULES_TEMPLATE = $this->CONFIG_TEMPLATE['rules'];
 			if ($this->MOD['template'] && isset($RULES_TEMPLATE[$this->MOD['model']]) && $RULES_TEMPLATE[$this->MOD['model']]) {
-				$TEMPLATE = $RULES_TEMPLATE[$this->MOD['model']][$this->MOD['template']];
-				if (isset($TEMPLATE[$this->_C]) && $TEMPLATE[$this->_C]) {
-					$template = $TEMPLATE[$this->_C];
-				}
+				$_M = $this->MOD['template'];
+			} else {
+				$_M = $this->_M;
 			}
+			return $this->getTemplatePath() . $_M . "/" . $template . $this->_SC["templatePrefix"];
+
+			/*
+			 * 
+			 * http://www.zhibo.com/web/pages/show.php?itemid=20
+			  $RULES_TEMPLATE = $this->CONFIG_TEMPLATE['rules'];
+			  if ($this->MOD['template'] && isset($RULES_TEMPLATE[$this->MOD['model']]) && $RULES_TEMPLATE[$this->MOD['model']]) {
+			  $TEMPLATE = $RULES_TEMPLATE[$this->MOD['model']][$this->MOD['template']];
+			  if (isset($TEMPLATE[$this->_C]) && $TEMPLATE[$this->_C]) {
+			  $template = $TEMPLATE[$this->_C];
+			  }
+			  } */
 		}
-		return $this->getTemplatePath() . $this->_M . "/" . $template . $this->_SC["templatePrefix"];
 	}
 
 	public function getSkin() {

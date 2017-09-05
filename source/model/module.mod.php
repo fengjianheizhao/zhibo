@@ -120,7 +120,7 @@ abstract class Model extends Kernel {
 	//写入模块配置文件
 	public function writeModule() {
 		$sql = "SELECT * FROM `{$this->table}` ORDER BY `sort` ASC , `mid` ASC ";
-		$module = $this->DB->getResult($sql);
+		$module = $this->DB->getResult($sql,0);
 		$module_file = $this->_APP_ROOT . "config/module.ini.php";
 		$text = "<?php  return array( ";
 		foreach ($module as $k => $v) {

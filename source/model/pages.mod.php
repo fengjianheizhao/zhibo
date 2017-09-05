@@ -1,16 +1,15 @@
 <?php
 
 defined('IN_SYSTEM') or exit('Access Denied');
-abstract class Model extends Kernel {
 
+abstract class Model extends Kernel {
 
 	public $table;
 
 	public function __construct() {
 		parent::__construct();
 		$this->loadBuiltinmodel("fields");
-		$this->fieldstype=$this->fields->getConfig();
-
+		$this->fieldstype = $this->fields->getConfig();
 		$this->table = "{$this->DB->tabPre}{$this->MOD['module']}_{$this->MOD['mid']}";
 		if (!$this->check()) {
 			$this->install();
@@ -21,7 +20,7 @@ abstract class Model extends Kernel {
 	public function getItem($itemid) {
 		$itemid = intval($itemid);
 		if ($itemid) {
-			$sql="SELECT * FROM `" . $this->table . "` WHERE `id` = '{$itemid}' ";
+			$sql = "SELECT * FROM `" . $this->table . "` WHERE `id` = '{$itemid}' ";
 			return $this->DB->getFirst($sql);
 		} else {
 			return false;
@@ -82,7 +81,7 @@ abstract class Model extends Kernel {
 	public function check() {
 		$tables_arr = array();
 		$sql = "show tables;";
-		
+
 		$result = $this->DB->getResult($sql);
 		foreach ($result as $v) {
 			$test = each($v);

@@ -9,7 +9,7 @@
     <title></title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="default">
-    <script type="text/javascript" src="file/js/device.min.js"></script>
+    <script type="text/javascript" src="files/js/device.min.js"></script>
     <script type="text/javascript">
         var isMobile = device.mobile(),
             isTable = device.tablet();

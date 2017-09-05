@@ -1,0 +1,2 @@
+[05-Sep-2017 16:20:32 Asia/Shanghai] PHP Notice:  Undefined property: index::$url in F:\wwwroot\www.zhibo.com\source\export\index.class.php on line 38
+[05-Sep-2017 16:55:15 Asia/Shanghai] PHP Fatal error:  Class 'Controllers' not found in F:\wwwroot\www.zhibo.com\source\export\index.class.php on line 5

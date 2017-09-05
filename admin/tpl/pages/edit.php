@@ -145,12 +145,23 @@
 				?>
 
 				<?php
-				$options = array(
-					array(
-						"key" => "默认模板",
-						"value" => "page-default",
-					),
-				);
+				$templateList = isset($templateConfig['rules'][$MOD['model']['template']['show']]) ? $templateConfig['rules'][$MOD['model']['template']['show']] : false;
+				if ($templateList && is_array($templateList)) {
+					$options = array();
+					foreach ($templateList as $k => $v) {
+						$options[] = array(
+							"key" => $v,
+							"value" => $k,
+						);
+					}
+				} else {
+					$options = array(
+						array(
+							"key" => "默认模板",
+							"value" => "page-default",
+						),
+					);
+				}
 				$FIELD = array(
 					"name" => "template", //字段名
 					"title" => "页面模板", //字段描述

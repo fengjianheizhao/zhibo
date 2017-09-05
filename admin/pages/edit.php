@@ -16,6 +16,7 @@ $DATA['title'] = $_SETTING['seotitle'];
 $DATA['keywords'] = $_SETTING['seokeyword'];
 $DATA['description'] = $_SETTING['seodescription'];
 $DATA['fieldsList'] = $fieldsList;
+$DATA['templateConfig'] = $this->CONFIG_TEMPLATE;
 $DATA['detail'] = $detail;
 $DATA['itemid'] = $itemid;
 $DATA['catetree'] = $catetree;

@@ -9,7 +9,7 @@ class manager extends Model {
 
 	public function __construct() {
 		parent::__construct();
-
+		$this->DB->cache = 0; //进入后台，则关闭数据库缓存功能，保证后台管理的实时性
 		$this->loadBuiltinmodel("admin"); //载入管理员模块
 		$this->_ADMIN = $this->admin->getAdmin(); //获取管理员信息
 		$this->admin->isLogin(); //判断管理员是否登录

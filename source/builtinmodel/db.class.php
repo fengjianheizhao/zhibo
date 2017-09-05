@@ -21,9 +21,9 @@ class db {
 
 	/**/
 	public $_ROOT;   //
-
+			
 	/**/
-	private $cache = 0; //数据查询开启缓存,大于0 则为缓存时间，否则表示关闭缓存
+	public $cache = 0; //数据查询开启缓存,大于0 则为缓存时间，否则表示关闭缓存
 	private $debug = false; //错误信息显示
 	private $errlog = false; //数据库错误日志记录
 	private $auxiliary = false;   //数据库优化辅助//记录执行的sql语句和执行时间，建议优化数据查询的时候开启,避免产生大量的记录文件
@@ -181,7 +181,7 @@ class db {
 	}
 
 	//执行sql语句，读取第一条数据
-	public function getFirst($sql, $fetchMode = "ASSOC", $cache = null) {
+	public function getFirst($sql, $cache = null, $fetchMode = "ASSOC") {
 		//echo $fetchMode;
 		$result = $this->getCache($fetchMode . $sql, $cache);
 		if ($result) {
@@ -199,7 +199,7 @@ class db {
 	}
 
 	//执行sql语句，返回数据列表
-	public function getResult($sql, $fetchMode = "ASSOC", $cache = null) {
+	public function getResult($sql, $cache = null, $fetchMode = "ASSOC") {
 		$result = $this->getCache($fetchMode . $sql, $cache);
 		if ($result) {
 			return $result;
