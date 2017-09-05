@@ -6,7 +6,7 @@
     <meta name="description" content=""/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
-    <title></title>
+    <title>555</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="default">
     <script type="text/javascript" src="file/js/device.min.js"></script>
