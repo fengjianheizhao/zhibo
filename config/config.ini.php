@@ -59,7 +59,7 @@ return array(
 	"autoLoadFunction" => "function", //自动加载function目录下的函数库
 
 	/* ---------------自动加载的内置模型---------------拓展库的配置文件，在source/conf目录中 */
-	"autoLoadBuiltinModel" => "category,ads,display", //自动加载builtinmodel目录下的内置模型
+	"autoLoadBuiltinModel" => "category,ads,display,template", //自动加载builtinmodel目录下的内置模型
 
 	/* ---------------自动加载的模型配置参数 --------------- */
 	"autoLoadGlobal" => "", //加载conf目录下的配置数组

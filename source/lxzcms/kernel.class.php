@@ -49,6 +49,7 @@ abstract class Kernel {
 	public $CONFIG_MODULE = null; //模块的配置参数
 	public $CONFIG_MODEL = null; //模型配置参数
 	public $CONFIG_SETTING = null; //系统设置参数
+	public $CONFIG_TEMPLATE = null; //当前前台模板配置参数
 
 
 	/**/
@@ -88,7 +89,9 @@ abstract class Kernel {
 		$this->DB->setRoot(LxzCmsRoot\LxzCms::$_APP_ROOT); //设置db环境目录
 		//自动加载配置文件指定资源
 		$this->autoLoad();
+
 		//初始化数据
+		$this->CONFIG_TEMPLATE = $this->template->getTemplateConfig();
 	}
 
 	private function autoLoad() {
@@ -388,7 +391,7 @@ abstract class Kernel {
 		setcookie($key, $value, $time, "/");
 	}
 
-	public function display($DATA, $template=null) {
+	public function display($DATA, $template = null) {
 		//echo $template;
 		/**/
 		$DATA["USER"] = $this->_USER;

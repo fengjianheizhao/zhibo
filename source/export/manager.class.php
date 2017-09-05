@@ -60,7 +60,10 @@ class manager extends Model {
 		return $this->_APP_ROOT . "admin/tpl/";
 	}
 
-	public function getTemplateFile($template) {
+	public function getTemplateFile($template = null) {
+		if ($template === null) {
+			$template = $this->_C;
+		}
 		return $this->getTemplatePath() . $this->MOD['model'] . "/" . $template . $this->_SC["templatePrefix"];
 	}
 

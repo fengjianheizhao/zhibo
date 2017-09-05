@@ -1,9 +1,7 @@
 <?php
 
 defined('IN_SYSTEM') or exit('Access Denied');
-$this->loadBuiltinModel("template");
 
-$templateConfig = $this->template->getTemplateConfig();
 
 $mid = intval($get['mid']);
 if (!$mid) {
@@ -18,7 +16,7 @@ $DATA = array();
 $DATA['title'] = $_SETTING['seotitle'];
 $DATA['keywords'] = $_SETTING['seokeyword'];
 $DATA['description'] = $_SETTING['seodescription'];
-$DATA['templateConfig'] = $templateConfig;
+$DATA['templateConfig'] = $this->CONFIG_TEMPLATE;
 $DATA['mid'] = $mid;
 $DATA['detail'] = $detail;
 

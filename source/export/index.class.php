@@ -87,6 +87,7 @@ class index extends Model {
 
 	//获取控制器文件
 	protected function getController() {
+
 		$controllersFile = $this->_APP_ROOT . "source/controllers/{$this->MOD['model']}/{$this->_C}.php";
 		if (file_exists($controllersFile) && $this->_C) {
 			return $controllersFile;
@@ -96,6 +97,8 @@ class index extends Model {
 	}
 
 	public function getTemplatePath() {
+		//
+
 		return $this->_APP_ROOT . "template/{$this->CONFIG_SETTING['template']}/{$this->DEVICE["path"]}/{$this->_L}/";
 	}
 
@@ -106,8 +109,15 @@ class index extends Model {
 		if ($this->_M == "index") {
 			return $this->getTemplatePath() . $template . $this->_SC["templatePrefix"];
 		} else {
-			return $this->getTemplatePath() . $this->_M . "/" . $template . $this->_SC["templatePrefix"];
+			$RULES_TEMPLATE = $this->CONFIG_TEMPLATE['rules'];
+			if ($this->MOD['template'] && isset($RULES_TEMPLATE[$this->MOD['model']]) && $RULES_TEMPLATE[$this->MOD['model']]) {
+				$TEMPLATE = $RULES_TEMPLATE[$this->MOD['model']][$this->MOD['template']];
+				if (isset($TEMPLATE[$this->_C]) && $TEMPLATE[$this->_C]) {
+					$template = $TEMPLATE[$this->_C];
+				}
+			}
 		}
+		return $this->getTemplatePath() . $this->_M . "/" . $template . $this->_SC["templatePrefix"];
 	}
 
 	public function getSkin() {
