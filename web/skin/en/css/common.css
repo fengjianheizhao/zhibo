@@ -1,0 +1,143 @@
+@charset "utf-8";
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select,
+div,
+table { margin: 0; padding: 0; }
+body input,
+body select,
+body textarea { outline: medium none; font-size: 14px; color: #525252; }
+body { background: repeat; color: #525252; word-wrap: break-word; word-break: normal; }
+ul,
+li { list-style: none; }
+a { color: #525252; blr:expression(this.onFocus=this.blur())}
+a:hover { color: #009900; }
+a,
+a:hover { text-decoration: none; cursor: pointer; }
+img { border: none; }
+body { font-size: 14px; font: 14px/150% Arial, Verdana, "微软雅黑"; }
+.f_l { float: left; font-size: 14px; }
+.f_r { float: right; font-size: 14px; }
+.clear { clear: both; }
+.clearfix { clear: both; overflow: hidden; font-size: 1px; height: 0px; line-height: 1px; }
+.h10 { height: 10px; overflow: hidden; font-size: 1px; clear: both; }
+.h15 { height: 15px; overflow: hidden; font-size: 1px; clear: both; }
+.h20 { height: 20px; overflow: hidden; font-size: 1px; clear: both; }
+.h40 { height: 20px; overflow: hidden; font-size: 1px; clear: both; }
+.h25 { height: 25px; overflow: hidden; font-size: 1px; clear: both; }
+.h40 { height: 40px; overflow: hidden; font-size: 1px; clear: both; }
+.h50 { height: 50px; overflow: hidden; font-size: 1px; clear: both; }
+.m { width: 1200px; margin: 0px auto; }
+.w1440 { width: 1920px; position: absolute; left: 50%; margin-left: -960px; }
+.w1920 { width: 1920px; position: absolute; left: 50%; margin-left: -960px; }
+.bannerBox { position: relative; overflow: hidden; min-width: 1000px; }
+.content img { max-width: 960px; }
+.img960px img { max-width: 960px; }
+.ads_slide { position: relative; }
+.pl_10 { padding-left: 10px; }
+.pr_10 { padding-right: 10px; }
+.ads_slide .ads_slide_imgbox { }
+.ads_slide .previewlist { position: absolute; padding: 0px; margin: 0px; width: auto; bottom: 10px; }
+.ads_slide .previewlist li { width: 15px; height: 15px; font-size: 12px; text-align: center; border-radius: 300px; line-height: 5px; text-indent: -999px; overflow: hidden; background: #009900; float: left; cursor: pointer; margin: 0px 3px; }
+.ads_slide .previewlist li.active { background:#ff6600;}
+.ads_slide .slide_Pre { display: none; }
+.ads_slide .slide_Next { display: none; }
+
+
+
+/*inputSelect*/
+.inputSelect { height: 30px; border: 1px solid #bcbcbc; border-radius: 2px; cursor: pointer; overflow: visible; position: relative; }
+.inputSelect .option_selected { }
+.inputSelect .option_selected .value { line-height: 30px; padding-left: 5px; font-size: 14px; color: #525252; }
+.inputSelect .option_selected .caret { float: right; background: #e6e6e6; height: 28px; width: 28px; margin: 1px; display: block; border-radius: 0px 2px 2px 0px; text-align: center; }
+.inputSelect .option_selected .caret i { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; display: inline-block; height: 0; margin: 12px auto 0px auto; width: 0; }
+.inputSelect .options_list { position: absolute; left: -1px; right: -1px; top: 30px; background: #ffffff; overflow-x: hidden; overflow-y: auto; border: 1px solid #bcbcbc; max-height: 156px; z-index: 999; }
+.inputSelect .options_list li { height: 26px; line-height: 26px; padding: 0px 5px; overflow: hidden; color: #525252; }
+.inputSelect .options_list li:hover { background: #f1f1f1; }
+.inputSelect .options_list li.choose { background: #e9e9e9; }
+
+
+
+
+/*objinput*/
+.objinput { border: 1px solid #bcbcbc; border-radius: 3px 3px 3px 3px; padding: 5px 5px; height: 20px; line-height: 20px; font-size: 14px; font-family: "微软雅黑", arial, sans-serif; }
+.objinput:focus { border: 1px solid #d1321d; }
+/*tipsBox*/
+.tipsBox { position: relative; }
+.tipsBox i { background: url(../images/020.png) no-repeat; display: block; width: 15px; height: 15px; }
+.tipsBox .tips { background-color: #fff; border: 1px solid #c4c4c4; border-radius: 3px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); padding: 8px 15px; position: absolute; text-align: left; width: 132px; color: #525252; display: none; left: -75px; top: 21px; z-index: 99; }
+.tipsBox .tips .arrow { border-style: none dashed solid; border-width: 0 5px 5px; height: 0; left: 76px; overflow: hidden; position: absolute; width: 0; }
+.tipsBox .tips .a_1 { border-color: transparent transparent #c4c4c4; top: -6px; }
+.tipsBox .tips .a_2 { border-color: transparent transparent #fff; top: -5px; }
+.tipsBox i:hover { background: url(../images/021.png) no-repeat; }
+.tipsBox:hover .tips { display: block; }
+.tipsBox .tipsHtml { padding:35px 75px; background: url(../images/tipshtmlbg.png) no-repeat 30px center; height:28px; line-height:28px; color: #575757; font-size: 14px; }
+.tipsBox .tipsBtn { padding: 15px 0px; background: #F3F3F5; }
+.tipsBox .tipsBtn a { display: block; width: 100px; height: 30px; line-height: 30px; background: #ff6600; color: #ffffff; text-align: center; font-size: 16px; border-radius: 3px; margin: 0px auto; }
+.popupsBg { position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgb(0,0,0); filter: alpha(opacity=30); -moz-opacity: 0.3; -khtml-opacity: 0.3; opacity: 0.3; z-index: 1000; }
+.popups { position: absolute; background: #FFF; z-index: 1001; box-shadow: 0px 0px 2px 2px #888888; border-radius: 3px 3px 3px 3px; top: 100px; left: 50%; width: 500px; margin-left: -250px; }
+.popups .head { height: 40px; line-height: 40px; padding: 0px 15px; background:#009900; position: relative; }
+.popups .head .title { color: #fff; font-size: 16px; font-weight: bold; }
+.popups .head .close { position: absolute; right: 10px; top: 3px; background: url(../images/close.png) no-repeat; display: block; width: 35px; height: 35px; }
+.popups .body { }
+.popups .yuyueFormBox { width: 406px; margin: 10px auto; }
+.popups .yuyueFormBox .tip_content { text-align: center; font-size: 14px; color: #2F6291; }
+.popups .yuyueFormBox .input_content { margin: 20px 0px; height: 100px; }
+.popups .yuyueFormBox .input_content .input_wrap { margin-bottom: 20px; height: 41px; line-height: 41px; }
+.popups .yuyueFormBox .input_content .input_wrap lable { font-size: 16px; }
+.popups .yuyueFormBox .input_content .input_control { width: 322px; float: right; }
+.popups .yuyueFormBox .input_content .input_txt { width: 312px; border: 1px solid #e1e1e1; font-size: 14px; height: 41px; padding-left: 10px; }
+.popups .yuyueFormBox .input_content lable { display: inline-block; }
+.popups .yuyueFormBox .button_content { display: block; margin: 0 auto; text-align: center; font-size: 16px; width: 188px; height: 38px; background: #3D9FE1; line-height: 38px; border-radius: 6px; letter-spacing: 2px; }
+.popups .yuyueFormBox .button_content a { color: #fff; font-weight: bold; }
+.popups .yuyueFormBox .button_content:hover { background: #2087CC; }
+.popups .yuyueFormBox .tip2_content { font-size: 14px; text-align: center; margin-top: 20px; }
+.popups .yuyueFormBox .tip2_content b { color: #D1321D; }
+/*list start*/
+.list_01 { }
+.list_01 ul { padding: 5px 10px; }
+.list_01 ul li { height: 24px; line-height: 24px; overflow: hidden; background: url(../images/icon/ico_list_01.gif) no-repeat left center; padding-left: 10px; }
+/*list end*/
+
+
+
+
+
+
+
+
+
+
+
+/*floatContact*/
+.floatContact { position: fixed; right: 0px; top: 100px; padding-left: 30px; height: 370px; z-index: 999; }
+.floatContact .btn { width: 30px; height: 130px; position: absolute; top: 50%; left: 0px; margin-top: -65px; background: #2693DB; border-radius: 5px 0px 0px 5px; }
+.floatContact .btn a { display: block; height: 130px; background: url(../images/floatcontact_btn_bg1.png) no-repeat center center; }
+.floatContact .btn a.open { background: url(../images/floatcontact_btn_bg0.png) no-repeat center center; }
+.floatContact .body { background: #44A7EB; border-radius: 5px 0px 0px 5px; padding: 20px 10px; width: 180px; }
+.floatContact .body .tit { height: 40px; line-height: 40px; color: #ffffff; font-size: 16px; }
+.floatContact .body .tit i { float: left; margin-right: 10px; }
+.floatContact .body .tel { color: #ffffff; font-size: 18px; font-weight: bold; height: 24px; line-height: 24px; margin-top: 5px; text-align: center; }
+.floatContact .body .teltime { text-align: center; color: #0764A4; height: 24px; line-height: 24px; }
+.floatContact .body .line { border-bottom: 1px #2687D5 solid; height: 0px; font-size: 1px; overflow: hidden; margin: 10px 0px; }
+.floatContact .body .qq { width: 160px; margin: 0px auto; }
+.floatContact .body .qq li { margin-top: 10px; }
+.floatContact .body .qq li a { background: url(../images/floatcontact_icon_qq_bg0.png) no-repeat; display: block; padding-left: 60px; color: #ffffff; height: 34px; line-height: 34px; font-size: 14px; }
+.floatContact .body .qq li a:hover { background: url(../images/floatcontact_icon_qq_bg1.png) no-repeat; }

@@ -1,0 +1,8 @@
+/* CSS Document */
+.red{ color:#F00;}
+.green{ color:green;}
+.update-box{ overflow:hidden;}
+.update-input{ float:left;}
+#content .bloc .input input.update-btn{ float:left; margin-left:10px; background:#DDDCDC;}
+#content .bloc .input input.select-btn { background: url(img/buttons.png) left -68px; border: 1px solid #3580A9; -moz-text-shadow: 0px -1px 0px #2C6AA3; -webkit-text-shadow: 0px -1px 0px #2C6AA3; -o-text-shadow: 0px -1px 0px #2C6AA3; text-shadow: 0px -1px 0px #2C6AA3; color: #D4E6EF; font-weight: bold; padding: 0 5px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px 3px 3px 3px; -moz-box-shadow: 0px 1px 5px #B2B2B2; -webkit-box-shadow: 0px 1px 5px #B2B2B2; -o-box-shadow: 0px 1px 5px #B2B2B2; box-shadow: 0px 1px 5px #B2B2B2; height:36px; margin-top: 1px;  cursor: pointer }
+#content .bloc .input input.select-btn:hover { background: #3786B9; color: #FFF; text-decoration: none; -moz-box-shadow: none; -webkit-box-shadow: none; -o-box-shadow: none; box-shadow: none }

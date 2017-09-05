@@ -1,0 +1,1 @@
+<?phpdefined('IN_SYSTEM') or exit('Access Denied');$title = "";$title.=$MOD['name'] . "_" . $_SETTING['sitename'];$keywords = $_SETTING['seokeyword'];$description = $_SETTING['seodescription'];@include $this->template($m . "/" . $ac);/*  * This file was created by Liu Xianzhong *  This file has ended */

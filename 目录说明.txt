@@ -1,0 +1,8 @@
+admin		管理后台
+application	子站应用目录
+cache		主站缓存目录
+config		配置文件
+editor		编辑器
+source		程序源文件
+templates	网站模板
+web			web前端目录

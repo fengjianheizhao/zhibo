@@ -1,0 +1,1 @@
+<?phpdefined('IN_SYSTEM') or exit('Access Denied');set_time_limit(0);ignore_user_abort();$ajax = array();switch ($this->s) {	case 'list':		break;	default :		$ajax['text'] = "参数错误！"; //参数错误		$ajax['status'] = 0; //参数错误		break;}echo json_encode($ajax); //输出json结构的数据/* * This file was created by Liu Xianzhong*  This file has ended*/

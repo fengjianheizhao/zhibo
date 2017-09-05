@@ -1,0 +1,10 @@
+controllers  控制器  子站也要有
+expand		拓展类
+export		出入口
+function	公共方法
+interface	接口
+kernel		核心
+model		模型
+conf		配置文件，自动加载
+Builtinmodel 内置模型
+global      公共变量配置,手动加载
