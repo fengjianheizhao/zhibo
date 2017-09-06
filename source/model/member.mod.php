@@ -133,6 +133,9 @@ abstract class Model extends Kernel {
 			`allow` text COMMENT '会员组权限', 
 			`addtime` int(11) default NULL COMMENT '创建时间',
 			`edittime` int(11) default NULL COMMENT '修改时间',
+			`point` int(20) default NULL COMMENT '等级所需积分',
+			`viewtme` int(20) default NULL COMMENT '允许观看时间',
+			`enteradmin` tinyint(4) default NULL COMMENT '允许进入后台',
 			 PRIMARY KEY  (`gid`)
 			 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;";
 		$this->DB->exec($sql);
@@ -155,6 +158,10 @@ abstract class Model extends Kernel {
 			`lastlogintime` int(11) default NULL COMMENT '上次登录时间',
 			`logins` int(11) default NULL COMMENT '登录次数',
 			`status` tinyint(4) default NULL COMMENT '状态',
+			`point1` int(20) default NULL COMMENT '积分1',
+			`point2` int(20) default NULL COMMENT '积分2',
+			`point3` int(20) default NULL COMMENT '积分3',
+			`roomid` int(20) default NULL COMMENT '关注的房间',
 			PRIMARY KEY  (`uid`)
 			) ENGINE=MyISAM AUTO_INCREMENT=10000 DEFAULT CHARSET=utf8;";
 		$this->DB->exec($sql);

@@ -7,8 +7,8 @@ return array(
 	"dbms" => "mysql", //数据库类型
 	"dbhost" => "localhost", //数据库服务器(一般为本地localhost)
 	"dbuser" => "root", //数据库用户名
-	//"dbpwd" => "root", //数据库密码
-	"dbpwd" => "elibrary", //数据库密码
+	"dbpwd" => "root", //数据库密码
+	//"dbpwd" => "elibrary", //数据库密码
 	"dbname" => "lxzcms_com", //数据库名
 
 	/**/
